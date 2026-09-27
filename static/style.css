@@ -68,6 +68,35 @@ label{display:block;font-size:12px;font-weight:800;margin:15px 0}input,select,te
         font-size: 12px;
     }
 
+    .navbar {
+    height: 65px;
+    padding: 0 5%;
+    }
+
+    .brand {
+    font-size: 18px;
+    gap: 7px;
+    }
+
+    .brand-mark {
+    width: 30px;
+    height: 30px;
+    }
+
+    nav {
+    gap: 8px;
+    font-size: 11px;
+    }
+
+    nav a:not(.nav-cta) {
+    display: none;  
+    }
+
+    .nav-cta {
+    padding: 9px 10px;
+    font-size: 10px;
+    }
+
     .hero {
         padding: 55px 5% 30px;
     }
