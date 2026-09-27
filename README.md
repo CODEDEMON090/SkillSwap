@@ -81,3 +81,21 @@ Creator Dashboard
 Accept / Decline
    ↓
 Client sees updated status
+
+
+## 📸 Screenshots
+
+### Marketplace
+![SkillSwap Marketplace](screenshots/homepage.png)
+
+### Post a Gig
+![Post a Gig](screenshots/post_gig.png)
+
+### Gig Details & Booking
+![Gig Details](screenshots/gig_details.png)
+
+### My Bookings
+![My Bookings](screenshots/my_bookings.png)
+
+### Creator Dashboard
+![Creator Dashboard](screenshots/creator_dashboard.png)
