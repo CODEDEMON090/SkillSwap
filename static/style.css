@@ -85,8 +85,8 @@ label{display:block;font-size:12px;font-weight:800;margin:15px 0}input,select,te
     }
 
     .hero-art {
-        transform: scale(.72);
-        margin: -20px auto -30px;
+        transform: scale(1);
+        margin: 0 auto -10px;
     }
 
     .gig-grid {
