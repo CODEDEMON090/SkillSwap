@@ -58,4 +58,98 @@ label{display:block;font-size:12px;font-weight:800;margin:15px 0}input,select,te
 .page-title{display:block}.page-title h1{font-size:52px;margin-bottom:8px}.page-title p{color:var(--muted)}.lookup{display:flex;gap:10px;max-width:600px;margin:25px 0 35px}.lookup input{margin:0}.booking-list{display:grid;gap:12px}.booking-row,.dashboard-row{background:white;border:1px solid var(--line);border-radius:17px;padding:18px;display:flex;align-items:center;gap:17px}.booking-avatar{margin:0}.booking-info{flex:1}.booking-info h3{margin:7px 0 4px;font:700 18px "Space Grotesk"}.booking-info p{margin:0;color:var(--muted);font-size:12px}.status{padding:8px 11px;border-radius:99px;font-size:11px;font-weight:800}.status.pending{background:#fff0bd;color:#896800}.status.accepted{background:#ddf5d8;color:#287023}.status.declined{background:#ffe0e0;color:#9b3434}.dashboard-row{align-items:flex-start}.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.action{border:0;border-radius:9px;padding:9px 12px;font-weight:700;cursor:pointer}.action.accept{background:#ddf5d8;color:#287023}.action.decline{background:#ffe0e0;color:#9b3434}blockquote{border-left:3px solid var(--accent);padding-left:12px;color:#6d7671;font-size:12px}
 .toast-wrap{position:fixed;top:90px;right:22px;z-index:30}.toast{background:var(--ink);color:white;padding:13px 17px;border-radius:12px;margin-bottom:8px;box-shadow:var(--shadow);font-size:13px}.toast.error{background:#9b3434}.toast.success{background:#2d6f32}
 @media(max-width:850px){nav a:not(.nav-cta){display:none}.hero,.form-page,.detail-grid{grid-template-columns:1fr}.hero{padding-top:55px}.hero-art{min-height:300px}.gig-grid{grid-template-columns:1fr 1fr}.detail-main h1{font-size:42px}.booking-card{position:static}.form-page{gap:35px}}
-@media(max-width:560px){.navbar{padding:0 4%}.nav-cta{padding:10px 12px}.hero h1,.form-intro h1{font-size:45px;letter-spacing:-2px}.gig-grid{grid-template-columns:1fr}.hero-art{transform:scale(.85)}.section-head{display:block}.lookup{display:block}.lookup .button{margin-top:8px;width:100%}.booking-row,.dashboard-row{align-items:flex-start}.status{margin-left:auto}.actions{width:100%;justify-content:flex-start}footer{display:block;line-height:2}}
+@media (max-width: 560px) {
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-cta {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 5% 30px;
+    }
+
+    .hero h1,
+    .form-intro h1 {
+        font-size: 42px;
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .hero-art {
+        transform: scale(.72);
+        margin: -20px auto -30px;
+    }
+
+    .gig-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .section-head {
+        display: block;
+    }
+
+    .section-head h2 {
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .lookup {
+        display: block;
+    }
+
+    .lookup .button {
+        margin-top: 8px;
+        width: 100%;
+    }
+
+    .category-chips {
+        gap: 8px;
+    }
+
+    .category-chip {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .gig-card {
+        padding: 20px;
+    }
+
+    .gig-card h3 {
+        font-size: 20px;
+    }
+
+    .gig-card p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .booking-row,
+    .dashboard-row {
+        align-items: flex-start;
+    }
+
+    .status {
+        margin-left: auto;
+    }
+
+    .actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    footer {
+        display: block;
+        line-height: 2;
+    }
+}
