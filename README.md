@@ -14,6 +14,28 @@ SkillSwap allows young creators to showcase their services and lets clients disc
 
 ---
 
+
+## 🛠️ Tech Stack
+
+### Frontend
+- HTML5
+- CSS3
+- Responsive Web Design
+
+### Backend
+- Python
+- Flask
+
+### Database
+- SQLite
+
+### Deployment
+- Render
+
+### Development & Version Control
+- Git
+- GitHub
+
 ## ✨ Features
 
 SkillSwap implements all five required features from the Track 2 SkillSwap brief.
