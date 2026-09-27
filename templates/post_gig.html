@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Post a Gig — SkillSwap{% endblock %}
+{% block content %}
+<section class="form-page">
+  <div class="form-intro">
+    <div class="eyebrow">CREATOR MODE</div>
+    <h1>Show the world<br><span>what you can do.</span></h1>
+    <p>Create a clear service listing. Keep the title specific, explain what the client receives, and choose a simple starting rate.</p>
+    <div class="tip-list">
+      <div><span>01</span> Use a specific gig title</div>
+      <div><span>02</span> Describe the outcome clearly</div>
+      <div><span>03</span> Set a realistic starting rate</div>
+    </div>
+  </div>
+
+  <form class="form-card" method="post">
+    <div class="form-header">
+      <h2>Create your gig</h2>
+      <span>All fields required</span>
+    </div>
+
+    <label>Creator name
+      <input name="creator" placeholder="e.g. Ayaan" required>
+    </label>
+
+    <label>Gig title
+      <input name="title" placeholder="e.g. I will design a modern logo" maxlength="80" required>
+    </label>
+
+    <div class="two-col">
+      <label>Category
+        <select name="category" required>
+          <option value="">Choose a category</option>
+          {% for c in categories %}
+          <option>{{ c }}</option>
+          {% endfor %}
+        </select>
+      </label>
+
+      <label>Starting rate (₹)
+        <input name="rate" type="number" min="1" step="1" placeholder="499" required>
+      </label>
+    </div>
+
+    <label>Description
+      <textarea name="description" rows="6" maxlength="500" placeholder="Explain what you offer, what the client gets, and what makes your service useful." required></textarea>
+    </label>
+
+    <button class="button full" type="submit">Publish Gig →</button>
+    <a class="cancel" href="{{ url_for('index') }}">Cancel</a>
+  </form>
+</section>
+{% endblock %}

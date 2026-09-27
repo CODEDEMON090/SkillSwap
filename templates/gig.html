@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}{{ gig.title }} — SkillSwap{% endblock %}
+{% block content %}
+<section class="detail-page">
+  <a class="back" href="{{ url_for('index') }}">← Back to marketplace</a>
+
+  <div class="detail-grid">
+    <div class="detail-main">
+      <span class="category-badge">{{ gig.category }}</span>
+      <h1>{{ gig.title }}</h1>
+      <div class="detail-creator">
+        <div class="avatar large">{{ gig.creator[0]|upper }}</div>
+        <div><small>CREATOR</small><strong>{{ gig.creator }}</strong></div>
+      </div>
+
+      <div class="detail-section">
+        <h3>About this gig</h3>
+        <p>{{ gig.description }}</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>What happens next?</h3>
+        <div class="steps">
+          <div><b>1</b><span>Send a booking request</span></div>
+          <div><b>2</b><span>Creator reviews your request</span></div>
+          <div><b>3</b><span>Track the status in My Bookings</span></div>
+        </div>
+      </div>
+    </div>
+
+    <aside class="booking-card">
+      <div class="price-label">STARTING AT</div>
+      <div class="price">₹{{ "%.0f"|format(gig.rate) }}</div>
+      <p>Request this service from {{ gig.creator }}.</p>
+      <form method="post" action="{{ url_for('book_gig', gig_id=gig.id) }}">
+        <label>Your name
+          <input name="client_name" placeholder="e.g. Rahul" required>
+        </label>
+        <label>Email
+          <input name="client_email" type="email" placeholder="you@example.com" required>
+        </label>
+        <label>Message <span class="optional">optional</span>
+          <textarea name="message" rows="4" placeholder="Tell the creator what you need..."></textarea>
+        </label>
+        <button class="button full" type="submit">Request Booking →</button>
+      </form>
+    </aside>
+  </div>
+</section>
+{% endblock %}

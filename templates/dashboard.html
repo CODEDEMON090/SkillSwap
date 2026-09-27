@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Creator Dashboard — SkillSwap{% endblock %}
+{% block content %}
+<section class="page-shell">
+  <div class="page-title">
+    <div class="eyebrow">CREATOR AREA</div>
+    <h1>Creator Dashboard</h1>
+    <p>Enter your creator name to review incoming booking requests.</p>
+  </div>
+
+  <form class="lookup" method="get">
+    <input name="creator" value="{{ creator }}" placeholder="Creator name" required>
+    <button class="button" type="submit">Open Dashboard</button>
+  </form>
+
+  {% if creator %}
+    {% if bookings %}
+      <div class="booking-list">
+      {% for b in bookings %}
+        <article class="dashboard-row">
+          <div class="booking-info">
+            <span class="category-badge">{{ b.category }}</span>
+            <h3>{{ b.title }}</h3>
+            <p>Client: <strong>{{ b.client_name }}</strong> · {{ b.client_email }}</p>
+            {% if b.message %}<blockquote>{{ b.message }}</blockquote>{% endif %}
+          </div>
+          <div class="actions">
+            <span class="status {{ b.status|lower }}">{{ b.status }}</span>
+            {% if b.status == "Pending" %}
+              <form method="post" action="{{ url_for('update_booking', booking_id=b.id, action='accept') }}"><button class="action accept">Accept</button></form>
+              <form method="post" action="{{ url_for('update_booking', booking_id=b.id, action='decline') }}"><button class="action decline">Decline</button></form>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty"><div class="empty-icon">✦</div><h3>No incoming bookings</h3><p>New client requests will appear here.</p></div>
+    {% endif %}
+  {% endif %}
+</section>
+{% endblock %}

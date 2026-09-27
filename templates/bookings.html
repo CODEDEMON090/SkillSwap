@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}My Bookings — SkillSwap{% endblock %}
+{% block content %}
+<section class="page-shell">
+  <div class="page-title">
+    <div class="eyebrow">CLIENT AREA</div>
+    <h1>My Bookings</h1>
+    <p>Enter the same name you used when sending your booking request.</p>
+  </div>
+
+  <form class="lookup" method="get">
+    <input name="client_name" value="{{ client_name }}" placeholder="Your name" required>
+    <button class="button" type="submit">View Bookings</button>
+  </form>
+
+  {% if client_name %}
+    {% if bookings %}
+      <div class="booking-list">
+      {% for b in bookings %}
+        <article class="booking-row">
+          <div class="booking-avatar">{{ b.creator[0]|upper }}</div>
+          <div class="booking-info">
+            <span class="category-badge">{{ b.category }}</span>
+            <h3>{{ b.title }}</h3>
+            <p>Creator: {{ b.creator }} · ₹{{ "%.0f"|format(b.rate) }}</p>
+          </div>
+          <span class="status {{ b.status|lower }}">{{ b.status }}</span>
+        </article>
+      {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty"><div class="empty-icon">□</div><h3>No bookings yet</h3><p>Book a gig from the marketplace and it will appear here.</p></div>
+    {% endif %}
+  {% endif %}
+</section>
+{% endblock %}

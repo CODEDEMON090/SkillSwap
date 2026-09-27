@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}SkillSwap — Find skills. Offer skills.{% endblock %}
+{% block content %}
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">CREATOR MARKETPLACE</div>
+    <h1>Turn your skills<br><span>into opportunities.</span></h1>
+    <p>Discover talented creators, book useful services, and turn what you know into something people can hire.</p>
+
+    <form class="searchbar" method="get">
+      <span class="search-icon">⌕</span>
+      <input name="q" value="{{ q }}" placeholder="Search for design, coding, editing..." aria-label="Search gigs">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <div class="hero-art">
+    <div class="float-card card-a">✦ Design</div>
+    <div class="float-card card-b">⌘ Python</div>
+    <div class="float-card card-c">▶ Video</div>
+    <div class="hero-orb">
+      <span>skills</span>
+      <strong>×</strong>
+      <span>ideas</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">EXPLORE SERVICES</div>
+      <h2>Find the right skill for your project</h2>
+    </div>
+    <span class="result-count">{{ gigs|length }} gigs</span>
+  </div>
+
+  <div class="chips">
+    <a class="chip {% if not selected_category %}active{% endif %}" href="{{ url_for('index', q=q) }}">All</a>
+    {% for c in categories %}
+      <a class="chip {% if selected_category == c %}active{% endif %}" href="{{ url_for('index', category=c, q=q) }}">{{ c }}</a>
+    {% endfor %}
+  </div>
+
+  {% if gigs %}
+  <div class="gig-grid">
+    {% for gig in gigs %}
+    <article class="gig-card">
+      <div class="gig-top">
+        <span class="category-badge">{{ gig.category }}</span>
+        <span class="mini-arrow">↗</span>
+      </div>
+      <div class="avatar">{{ gig.creator[0]|upper }}</div>
+      <h3>{{ gig.title }}</h3>
+      <p>{{ gig.description }}</p>
+      <div class="creator-line">by <strong>{{ gig.creator }}</strong></div>
+      <div class="card-bottom">
+        <div><small>STARTING AT</small><strong>₹{{ "%.0f"|format(gig.rate) }}</strong></div>
+        <a class="button small" href="{{ url_for('gig_detail', gig_id=gig.id) }}">View Gig</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+    <div class="empty">
+      <div class="empty-icon">⌕</div>
+      <h3>No gigs found</h3>
+      <p>Try another search or category.</p>
+      <a class="button" href="{{ url_for('index') }}">Clear filters</a>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}
