@@ -60,16 +60,44 @@ label{display:block;font-size:12px;font-weight:800;margin:15px 0}input,select,te
 @media(max-width:850px){nav a:not(.nav-cta){display:none}.hero,.form-page,.detail-grid{grid-template-columns:1fr}.hero{padding-top:55px}.hero-art{min-height:300px}.gig-grid{grid-template-columns:1fr 1fr}.detail-main h1{font-size:42px}.booking-card{position:static}.form-page{gap:35px}}
 @media (max-width: 560px) {
     .navbar {
-        padding: 0 5%;
+        height: auto;
+        min-width: 65px;
+        padding: 10px 5%;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .brand {
+        font-size: 18px;
+        gap: 7px;
+    }
+
+    .brand-mark {
+        width: 30px;
+        height: 30px;
     }
 
     .nav-cta {
         padding: 9px 12px;
-        font-size: 12px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        order: 3;
+        padding-top: 8px;
+        border-top: 1px solid var(--line);
     }
 
     nav a:not(.nav-cta) {
-    display: none !important;
+        display: inline-block !important;
+        font-size: 10px;
+        white-space: nowrap;
     }
 
     .hero {
