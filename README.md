@@ -1,32 +1,83 @@
 # SkillSwap — Code2Career AI Hackathon
 
-A fast Flask + SQLite implementation of the SkillSwap Track 2 brief.
+A modern gig marketplace built for the **Code2Career AI Hackathon — Track 2: Web Development / Real-World AI Products**.
 
-## Required features
-1. Post a Gig
-2. Browse & Search
-3. Book a Gig
-4. Creator Dashboard
-5. My Bookings
+SkillSwap allows young creators to showcase their services and lets clients discover, book, and manage those services through a simple marketplace workflow.
 
-## Run locally
+## 🚀 Live Demo
 
-```bash
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# macOS/Linux:
-source .venv/bin/activate
+**Live App:** `https://skillswap-urg7.onrender.com/`
 
-pip install -r requirements.txt
-python app.py
-```
+**GitHub Repository:** `https://github.com/CODEDEMON090/SkillSwap`
 
-Open http://127.0.0.1:5000
+**Hackathon ID** `AZIS-XACGV3`
 
-## Hackathon submission checklist
-- Deploy the app to a public live URL.
-- Push the project to a public GitHub repository.
-- Replace/add your real Hackathon ID where required by the hackathon submission instructions.
-- Keep DECISIONS.md in the repository.
-- Test the five required flows before submitting.
+---
+
+## ✨ Features
+
+SkillSwap implements all five required features from the Track 2 SkillSwap brief.
+
+### 1. Post a Gig
+
+Creators can publish a service by providing:
+
+- Gig title
+- Category
+- Rate
+- Description
+
+### 2. Browse & Search
+
+Clients can:
+
+- Browse available gigs
+- Search for gigs
+- Filter gigs by category
+- Open individual gig details
+
+### 3. Book a Gig
+
+Clients can select a gig and submit a booking request with their details and requirements.
+
+New bookings initially appear with a:
+
+**Pending** status.
+
+### 4. Creator Dashboard
+
+Creators can view incoming booking requests and manage them by:
+
+- Accepting a booking
+- Declining a booking
+
+### 5. My Bookings
+
+Clients can view their booking history and see the current status of each request:
+
+- Pending
+- Accepted
+- Declined
+
+---
+
+## 🔄 Core Workflow
+
+```text
+Creator
+   ↓
+Post a Gig
+   ↓
+Gig appears in Marketplace
+   ↓
+Client discovers/searches for Gig
+   ↓
+Client submits Booking
+   ↓
+Booking = Pending
+   ↓
+Creator Dashboard
+   ↓
+Accept / Decline
+   ↓
+Client sees updated status
