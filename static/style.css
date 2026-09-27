@@ -85,8 +85,33 @@ label{display:block;font-size:12px;font-weight:800;margin:15px 0}input,select,te
     }
 
     .hero-art {
+        min-height: 390px;
         transform: scale(1);
         margin: 0 auto -10px;
+    }
+
+    .hero-orb {
+    position: relative;
+    z-index: 1;
+    }
+
+    .float-card {
+    z-index: 2;
+    }
+
+    .card-a {
+    top: 30px;
+    left: 2%;
+    }
+
+    .card-b {
+    top: 120px;
+    right: 0;
+    }
+
+    .card-c {
+    bottom: 45px;
+    left: 2%;
     }
 
     .gig-grid {
